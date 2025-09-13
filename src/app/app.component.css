@@ -44,10 +44,10 @@
 /* Responsive: Only show logo image on mobile */
 @media (max-width: 600px) {
   .logo-text {
-    display: inline;
+    display: none;
   }
   .logo-img {
-    display: none;
+    display: inline;
   }
 }
 
