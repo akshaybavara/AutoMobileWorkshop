@@ -1,0 +1,10 @@
+.service-detail-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+mat-card {
+  max-width: 700px;
+  width: 100%;
+}

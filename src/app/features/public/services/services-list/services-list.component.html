@@ -1,0 +1,10 @@
+<div class="services-container">
+  <div class="services-grid">
+    <div *ngFor="let service of services" class="grid-item">
+      <app-service-card 
+        [service]="service" 
+        (book)="bookService($event)">
+      </app-service-card>
+    </div>
+  </div>
+</div>

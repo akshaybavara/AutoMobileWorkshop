@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Car Denting",
+        "slug": "car-denting",
+        "category": "Body Work",
+        "price": 2500,
+        "durationMinutes": 120,
+        "description": "Complete car denting service",
+        "imageUrl": "assets/images/denting.jpg",
+        "tags": [
+            "denting",
+            "bodywork"
+        ]
+    },
+     {
+        "id": 2,
+        "name": "Car Painting",
+        "slug": "car-Painting",
+        "category": "Body Work",
+        "price": 2600,
+        "durationMinutes": 320,
+        "description": "Complete car painting service",
+        "imageUrl": "assets/images/painting.jpg",
+        "tags": [
+            "Painting",
+            "bodywork"
+        ]
+    },
+     {
+        "id": 3,
+        "name": "Car Service",
+        "slug": "car-Services",
+        "category": "Body Work",
+        "price": 2600,
+        "durationMinutes": 320,
+        "description": "Complete car  service",
+        "imageUrl": "assets/images/service.jpg",
+        "tags": [
+            "Services",
+            "bodywork"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Car Service Next",
+        "slug": "car-Services Next",
+        "category": "Body Work",
+        "price": 2600,
+        "durationMinutes": 320,
+        "description": "Complete car  service",
+        "imageUrl": "assets/images/service.jpg",
+        "tags": [
+            "Services Next",
+            "bodywork"
+        ]
+    }
+]

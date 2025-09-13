@@ -1,0 +1,34 @@
+<mat-card class="service-card">
+  <div class="card-image-container">
+    <img mat-card-image [src]="service.imageUrl" [alt]="service.name" />
+  </div>
+
+  <mat-card-header>
+    <mat-card-title>{{ service.name }}</mat-card-title>
+    <mat-card-subtitle>{{ service.category }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="desc">{{ service.description }}</p>
+
+    <div class="details">
+      <span class="price"><strong>Price:</strong> ₹{{ service.price }}</span>
+      <span class="duration"><strong>Duration:</strong> {{ service.durationMinutes }} min</span>
+    </div>
+
+    <mat-chip-listbox class="tags">
+      <mat-chip *ngFor="let tag of service.tags" color="primary" selected>
+        {{ tag }}
+      </mat-chip>
+    </mat-chip-listbox>
+  </mat-card-content>
+
+  <mat-card-actions align="end" *ngIf="showActions">
+    <button mat-stroked-button color="primary"  [routerLink]="['/services', service.slug]">
+      View Details
+    </button>
+    <button mat-raised-button color="accent" class="UIbtn" [routerLink]="['/booking', service.id]">
+      Book Now
+    </button>
+  </mat-card-actions>
+</mat-card>

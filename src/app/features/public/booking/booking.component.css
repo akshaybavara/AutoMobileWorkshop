@@ -1,0 +1,35 @@
+.booking-page {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.booking-layout {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left panel (service info) */
+.booking-service {
+  flex: 1 1 350px;
+  max-width: 400px;
+}
+
+/* Right panel (form) */
+.booking-form {
+  flex: 2 1 500px;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: #333;
+  text-align: center;
+}

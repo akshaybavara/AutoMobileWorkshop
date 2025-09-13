@@ -1,0 +1,34 @@
+.services-container {
+  padding: 16px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 services on desktop */
+  gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 services on tablet */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .services-container {
+    padding: 0; /* remove outer padding on mobile */
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* 1 service per row */
+    gap: 12px;
+  }
+
+  .grid-item app-service-card,
+  .grid-item mat-card {
+    border-radius: 0;       /* remove rounded corners */
+    box-shadow: none;       /* flat design like mobile apps */
+  }
+}

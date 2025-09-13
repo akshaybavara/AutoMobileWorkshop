@@ -1,0 +1,51 @@
+<div class="about-us-container">
+  <h2>About Us</h2>
+  <p class="about-subtitle">
+    Get to know who we are, what we stand for, and the people behind the services you trust.
+  </p>
+
+  <!-- Timeline Section -->
+  <div class="timeline-section">
+    <h3 class="section-heading">Our Journey</h3>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let event of timelineEvents; let i = index">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>{{ event.year }}</h4>
+          <p>{{ event.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission & Vision -->
+<div class="about-us-container">
+  <div class="mission-vision">
+    <div class="section">
+      <mat-icon class="section-icon">flag</mat-icon>
+      <h3>Our Mission</h3>
+      <p>To provide top-quality automotive services with integrity and reliability, ensuring customer satisfaction every step of the way.</p>
+    </div>
+
+    <div class="section">
+      <mat-icon class="section-icon">visibility</mat-icon>
+      <h3>Our Vision</h3>
+      <p>To be the most trusted and innovative car care provider, revolutionizing service experience through excellence and customer-first solutions.</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Team Profiles -->
+  <div class="team-section">
+    <h3 class="section-heading">Meet Our Team</h3>
+    <div class="team-grid">
+      <mat-card class="team-card" *ngFor="let member of teamMembers">
+        <img mat-card-image [src]="member.photo" [alt]="member.name" />
+        <mat-card-content>
+          <h4>{{ member.name }}</h4>
+          <p>{{ member.role }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

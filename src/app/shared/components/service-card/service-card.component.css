@@ -1,0 +1,78 @@
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-image-container {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+mat-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+mat-card-subtitle {
+  font-size: 0.9rem;
+  color: #757575;
+}
+
+.desc {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.price {
+  color: #1976d2;
+}
+
+.duration {
+  color: #009688;
+}
+
+.tags {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+.UIbtn{
+  background: linear-gradient(90deg, #2196f3, #00c853) !important; /* Blue-Green */
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.3) !important;
+}
+.UIbtn:hover {
+  background: linear-gradient(90deg, #2196f3, #00c853); /* Blue-Green */
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.3);
+  transform: translateY(-2px);
+}

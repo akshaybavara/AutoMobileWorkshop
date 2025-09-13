@@ -1,0 +1,30 @@
+<div *ngIf="service" class="service-detail-container">
+  <mat-card>
+    <img mat-card-image [src]="service.imageUrl" [alt]="service.name" />
+
+    <mat-card-header>
+      <mat-card-title>{{ service.name }}</mat-card-title>
+      <mat-card-subtitle>{{ service.category }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{ service.description }}</p>
+      <p><strong>Price:</strong> ₹{{ service.price }}</p>
+      <p><strong>Duration:</strong> {{ service.durationMinutes }} minutes</p>
+
+      <mat-chip-listbox>
+        <mat-chip *ngFor="let tag of service.tags">{{ tag }}</mat-chip>
+      </mat-chip-listbox>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="accent" [routerLink]="['/booking', service.id]">
+        Book Appointment
+      </button>
+      <button mat-stroked-button color="primary" routerLink="/">
+        Back to Services
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

@@ -1,0 +1,261 @@
+/* Toolbar */
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #283593, #3949ab);
+  color: white;
+  padding: 0 16px;
+}
+
+/* Logo container for alignment */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Minimal space between logo and title */
+}
+
+/* Logo image styling */
+.logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 0;
+  background: none;
+  border-radius: 0;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.22));
+}
+
+/* Gradient title styling */
+.logo-text {
+  font-weight: 700;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #ffea00, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 8px rgba(40,53,147,0.18);
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+/* Responsive: Only show logo image on mobile */
+@media (max-width: 600px) {
+  .logo-text {
+    display: inline;
+  }
+  .logo-img {
+    display: none;
+  }
+}
+
+/* Spacer pushes nav to the right */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Desktop Navigation */
+.desktop-nav a {
+  margin-left: 12px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
+
+.desktop-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.active-link {
+  border-bottom: 2px solid #fff;
+}
+
+/* Menu Button (for mobile) */
+.menu-btn {
+  margin-right: 12px;
+}
+
+/* SideNav for Mobile */
+.sidenav-container {
+  height: calc(100vh - 64px);
+}
+
+.mobile-sidenav {
+  width: 220px;
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.mobile-nav a:hover {
+  background: #f2f2f2;
+}
+
+/* Main Content */
+.app-main {
+  padding: 20px;
+  min-height: calc(100vh - 120px);
+  background: #fafafa;
+}
+
+/* CTA Buttons */
+.cta-call-btn,
+.cta-map-btn,
+.cta-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(90deg, #2196f3, #00c853);
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.3);
+  color: white !important;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-left: 16px;
+  transition: all 0.3s ease;
+}
+
+.cta-call-btn mat-icon.call-icon,
+.cta-map-btn mat-icon.map-icon,
+.cta-whatsapp-btn mat-icon.whatsapp-icon {
+  font-size: 20px;
+}
+
+.cta-call-btn:hover,
+.cta-map-btn:hover,
+.cta-whatsapp-btn:hover {
+  background: linear-gradient(90deg, #2196f3, #00c853);
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.3);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .cta-call-btn,
+  .cta-map-btn,
+  .cta-whatsapp-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    margin-left: 8px;
+  }
+  .cta-call-btn span.call-text,
+  .cta-map-btn span.map-text,
+  .cta-whatsapp-btn span.whatsapp-text {
+    display: none;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .logo-img {
+    height: 32px;
+  }
+}
+
+/* Footer */
+.app-footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+}
+
+/* Footer Social Icons */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+
+.footer-social a {
+  background: #fff;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s, transform 0.2s;
+  font-size: 22px;
+}
+
+.footer-social a:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* Brand colors for icons */
+.footer-social a[aria-label="YouTube"] mat-icon { color: #FF0000; }
+.footer-social a[aria-label="Instagram"] mat-icon { color: #E4405F; }
+.footer-social a[aria-label="Twitter"] mat-icon { color: #1DA1F2; }
+.footer-social a[aria-label="LinkedIn"] mat-icon { color: #0077B5; }
+.footer-social a[aria-label="Facebook"] mat-icon { color: #1877F3; }
+
+.footer-social mat-icon {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  vertical-align: middle;
+  transition: color 0.2s;
+}
+
+/* Footer QR code styling */
+.footer-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.google-map-qr {
+  width: 90px;
+  height: 90px;
+  max-width: 28vw;
+  max-height: 28vw;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+  background: #fff;
+  transition: width 0.2s, height 0.2s;
+}
+
+.qr-caption {
+  font-size: 0.92rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Responsive: Make QR code and copyright smaller on small screens */
+@media (max-width: 600px) {
+  .google-map-qr {
+    width: 60px;
+    height: 60px;
+    max-width: 40vw;
+    max-height: 40vw;
+  }
+  .footer-qr {
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+  .footer-copyright {
+    font-size: 0.92rem;
+    padding: 0 2vw;
+  }
+}
+
+/* Copyright */
+.footer-copyright {
+  font-size: 1rem;
+  color: #bdbdbd;
+  margin: 12px 0 0 0;
+  text-align: center;
+  word-break: break-word;
+  padding: 0 8px;
+}

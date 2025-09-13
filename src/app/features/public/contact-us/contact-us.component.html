@@ -1,0 +1,78 @@
+<div class="contact-container">
+  <h2>Contact Us</h2>
+  <p class="subtitle">We’d love to hear from you! Fill out the form and our team will get back to you soon.</p>
+ <form class="contact-form" #contactForm="ngForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput name="name" ngModel required #name="ngModel">
+    <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+      Name is required.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" name="email" ngModel required email #email="ngModel">
+    <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+      <span *ngIf="email.errors?.['required']">Email is required.</span>
+      <span *ngIf="email.errors?.['email']">Enter a valid email.</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Phone</mat-label>
+    <input matInput type="tel" name="phone" ngModel pattern="^[0-9]{10}$" #phone="ngModel">
+    <mat-error *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+      <span *ngIf="phone.errors?.['pattern']">Enter a valid 10-digit phone number.</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Message</mat-label>
+    <textarea matInput name="message" ngModel rows="4" required #message="ngModel"></textarea>
+    <mat-error *ngIf="message.invalid && (message.dirty || message.touched)">
+      Message is required.
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button type="button" class="send-whatsapp-btn"
+    (click)="sendToWhatsApp(contactForm)" [disabled]="!contactForm.valid">
+    <mat-icon svgIcon="whatsapp"></mat-icon>
+    Send to WhatsApp
+  </button>
+</form>
+  <div class="contact-details">
+    <div>
+      <mat-icon color="primary">location_on</mat-icon>
+      <span>SY No. 104/8 Airport, Galamma Circle, Begur Village, Jala Hobli, Bengaluru-562149</span>
+    </div>
+    <div>
+      <mat-icon color="primary">call</mat-icon>
+      <a href="tel:+919411104063">+91 9411104063</a>||
+      <a href="tel:+917078013093">+91 7078013093</a>
+    </div>
+    <div>
+      <mat-icon color="primary">email</mat-icon>
+      <a href="mailto:speedfix.automobile@gmail.com">speedfix.automobile@gmail.com</a>
+    </div>
+    <div class="contact-social">
+      <a href="https://wa.me/919411104063" target="_blank" aria-label="WhatsApp">
+        <mat-icon svgIcon="whatsapp"></mat-icon>
+      </a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+        <mat-icon svgIcon="instagram"></mat-icon>
+      </a>
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+        <mat-icon svgIcon="facebook"></mat-icon>
+      </a>
+    </div>
+  </div>
+  <div class="contact-map">
+    <iframe
+      src="https://www.google.com/maps?q=13.1839587,77.6805513&z=15&output=embed"
+      width="100%"
+      height="220"
+      style="border:0; border-radius:12px; margin-top:18px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Google Map Location"
+    ></iframe>
+  </div>
+</div>

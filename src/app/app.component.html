@@ -1,0 +1,98 @@
+<mat-toolbar color="primary" class="app-toolbar">
+  <!-- Logo / Title -->
+  <button mat-icon-button (click)="toggleSidenav()" class="menu-btn" *ngIf="isMobile">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <!-- Logo Image and Title (responsive) -->
+<span class="logo-container">
+  <img src="assets/images/logo/speedfixauto.png" alt="SpeedFix Automobile" class="logo-img" />
+  <span class="logo-text">{{ title }}</span>
+</span>
+
+  <span class="spacer"></span>
+
+  <!-- Desktop Nav -->
+  <nav class="desktop-nav" *ngIf="!isMobile">
+    <a mat-button routerLink="/home" routerLinkActive="active-link">Home</a>
+    <a mat-button routerLink="/services" routerLinkActive="active-link">Services</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active-link">Contact Us</a>
+    <a mat-button routerLink="/about" routerLinkActive="active-link">About Us</a>
+  </nav>
+
+  <!-- 📞 CTA Call Button -->
+  <a class="cta-call-btn" href="tel:+919411104063" target="_blank" rel="noopener">
+    <mat-icon class="call-icon">call</mat-icon>
+    <span class="call-text">Call Now</span>
+  </a>
+  <!-- 💬 WhatsApp CTA Button -->
+  <a
+    class="cta-whatsapp-btn"
+    href="https://wa.me/919411104063"
+    target="_blank"
+    rel="noopener"
+  >
+    <mat-icon svgIcon="whatsapp"></mat-icon>
+    <span class="whatsapp-text">WhatsApp</span>
+  </a>
+    <!-- 📍 Google Maps Button -->
+  <a
+    class="cta-map-btn"
+    href="https://www.google.com/maps?q=13.1839587,77.6805513" 
+    target="_blank"
+    rel="noopener"
+  >
+    <mat-icon class="map-icon">location_on</mat-icon>
+    <span class="map-text">Locate Us</span>
+  </a>
+</mat-toolbar>
+
+<!-- SideNav for Mobile -->
+<mat-sidenav-container class="sidenav-container" *ngIf="isMobile">
+  <mat-sidenav #sidenav mode="over" [(opened)]="sidenavOpened" class="mobile-sidenav">
+    <nav class="mobile-nav">
+      <a mat-list-item routerLink="/home" (click)="closeSidenav()">Home</a>
+      <a mat-list-item routerLink="/services" (click)="closeSidenav()">Services</a>
+      <a mat-list-item routerLink="/contact"  (click)="closeSidenav()">Contact Us</a>
+      <a mat-button routerLink="/about" (click)="closeSidenav()">About Us</a>
+      <!-- <a mat-list-item routerLink="/booking" (click)="closeSidenav()">Book Now</a>
+      <a mat-list-item routerLink="/admin" (click)="closeSidenav()">Admin</a> -->
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main class="app-main">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<router-outlet></router-outlet>
+
+<!-- Back to Top -->
+<app-back-to-top></app-back-to-top>
+
+<!-- Footer -->
+<footer class="app-footer">
+  <div class="footer-social">
+    <a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+      <mat-icon svgIcon="youtube"></mat-icon>
+    </a>
+    <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+      <mat-icon svgIcon="instagram"></mat-icon>
+    </a>
+    <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">
+      <mat-icon svgIcon="x"></mat-icon>
+    </a>
+    <a href="https://googlemap.com/" target="_blank" rel="noopener" aria-label="Google Maps">
+      <mat-icon svgIcon="googlemaps"></mat-icon>
+    </a>
+    <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+      <mat-icon svgIcon="facebook"></mat-icon>
+    </a>
+  </div>
+  <div class="footer-qr">
+    <img src="assets/images/GMAP_QR.png" alt="Google Map QR Code" class="google-map-qr" />
+    <div class="qr-caption">Scan to open location</div>
+  </div>
+  <p class="footer-copyright">&copy; {{ currentYear }} {{title}}. All rights reserved.</p>
+</footer>

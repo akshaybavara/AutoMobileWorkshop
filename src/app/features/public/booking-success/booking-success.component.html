@@ -1,0 +1,23 @@
+<div class="success-container">
+  <h2>🎉 Booking Confirmed!</h2>
+   <p>Thank you, <strong>{{ booking?.name }}</strong>. Your booking <b>{{ booking?.service.name }}</b> has been confirmed. for  <strong>Date: {{ booking?.date }} | Time: {{ booking?.time }}</strong> </p>
+
+  <div class="details-card">
+    <h3>📌 Booking Details</h3>
+    <p><strong>Service:</strong> {{ booking?.service?.name }}</p>
+    <p><strong>Price:</strong> ₹{{ booking?.service?.price }}</p>
+    <p><strong>Duration:</strong> {{ booking?.service?.durationMinutes }} min</p>
+    <p><strong>Date:</strong> {{ booking?.date | date }}</p>
+    <p><strong>Time:</strong> {{ booking?.time }}</p>
+    <p><strong>Email:</strong> {{ booking?.email }}</p>
+    <p><strong>Phone:</strong> {{ booking?.phone }}</p>
+    <p *ngIf="booking?.notes"><strong>Notes:</strong> {{ booking?.notes }}</p>
+  </div>
+  <button mat-raised-button color="accent" (click)="downloadPDF()">
+  📄 Download Receipt
+  </button>&nbsp;&nbsp;
+  <button mat-raised-button color="primary" routerLink="/services">
+    🔙 Back to Services
+  </button>
+<button mat-raised-button color="#4caf50" (click)="sendWhatsApp()">💬 Send via WhatsApp</button>
+</div>

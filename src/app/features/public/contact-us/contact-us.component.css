@@ -1,0 +1,110 @@
+.contact-container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.10);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.contact-container h2 {
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #283593;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 1.08rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.contact-form button {
+  margin-top: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.contact-details {
+  margin-top: 18px;
+  text-align: left;
+}
+
+.contact-details div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.contact-details a {
+  color: #3949ab;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.contact-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.contact-social a mat-icon[svgIcon="whatsapp"] { color: #25D366; }
+.contact-social a mat-icon[svgIcon="instagram"] { color: #E4405F; }
+.contact-social a mat-icon[svgIcon="facebook"] { color: #1877F3; }
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 18px 6px;
+  }
+}
+.contact-map {
+  margin-top: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(44,62,80,0.10);
+}
+
+@media (max-width: 600px) {
+  .contact-map iframe {
+    height: 160px;
+  }
+}
+.send-whatsapp-btn {
+  background: linear-gradient(90deg, #25d366, #128c7e);
+  color: #fff !important;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.13);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.send-whatsapp-btn:hover {
+  background: linear-gradient(90deg, #25d366, #075e54);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.send-whatsapp-btn mat-icon {
+  font-size: 22px;
+}
