@@ -44,10 +44,12 @@
 /* Responsive: Only show logo image on mobile */
 @media (max-width: 600px) {
   .logo-text {
-    display: none;
+    display: inline;
+    font-weight: 850;
+    font-size: 1.1rem;
   }
   .logo-img {
-    display: inline;
+    height: 62px;
   }
 }
 
@@ -154,7 +156,7 @@
     display: none;
   }
   .logo-img {
-    height: 32px;
+    height: 62px;
   }
 }
 
