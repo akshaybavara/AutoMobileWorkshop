@@ -169,12 +169,12 @@
   }
 
   .team-card {
-    width: 160px;
+    width: 260px;
   }
 
   .team-card img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -201,11 +201,11 @@
   }
 
   .team-card {
-    width: 140px;
+    width: 240px;
   }
 
   .team-card img {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
   }
 }
