@@ -1,0 +1,111 @@
+/* Scrollable area */
+.scroll-snap {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+}
+.scroll-snap::-webkit-scrollbar { display: none; }
+.scroll-snap { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Service & Review Cards (shared slider style) */
+.service-card,
+.review-card {
+  scroll-snap-align: start;
+  flex: 0 0 80%;        /* show 1 card + part of next */
+  max-width: 400px;     /* cap width on big screens */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 16px;
+  margin-right: 10px;   /* spacing between slides */
+}
+
+/* Service Card Specific */
+.service-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.service-card h4 {
+  margin: 8px 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Review Card Specific */
+.review-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.review-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.stars mat-icon {
+  font-size: 16px;
+  color: #FFD700;
+}
+.review-text {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+.review-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+.arrow-left { left: 10px; }
+.arrow-right { right: 10px; }
+.arrow-up, .arrow-down { display: none; }
+
+@media (max-width: 900px) {
+  .arrow-left, .arrow-right { display: none; }
+  .arrow-up, .arrow-down {
+    display: block;
+    position: static;
+    margin: 10px 0;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .scroll-snap {
+    flex-direction: column;
+    align-items: center;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .service-card,
+  .review-card {
+    flex: 1 1 auto;
+    width: 90%;   /* full width on mobile */
+    max-width: 500px;
+  }
+}

@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { environment} from '../environments/environment.development';
 import { DashboardComponent } from './features/admin/dashboard/dashboard.component';
 import { ServicesCrudComponent } from './features/admin/services-crud/services-crud.component';
 import { AppointmentsComponent } from './features/admin/appointments/appointments.component';
@@ -33,6 +32,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BookingSuccessComponent } from './features/public/booking-success/booking-success.component';
 import { ContactUsComponent } from './features/public/contact-us/contact-us.component';
 import { AboutUsComponent } from './features/public/about-us/about-us.component';
+import { VideoCarouselComponent } from './features/public/video-carousel/video-carousel.component';
+import { ReviewCarouselComponent } from './features/public/review-carousel/review-carousel.component';
+import { CarouselComponent } from './shared/carousel/carousel.component';
 
 
 @NgModule({
@@ -50,7 +52,10 @@ import { AboutUsComponent } from './features/public/about-us/about-us.component'
     BackToTopComponent,
     BookingSuccessComponent,
     ContactUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    VideoCarouselComponent,
+    ReviewCarouselComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

@@ -66,4 +66,15 @@
       View All Services
     </button>
   </div>
+  <h2 class="section-title">What Our Customers Say</h2>
+  <app-carousel
+    [items]="googleReviews"
+    type="review"
+    [autoplay]="true"
+    [autoplayInterval]="4000">
+  </app-carousel>
+<h2 class="section-title">Watch Our Work</h2>
+<app-carousel [items]="videos" type="video"></app-carousel>
+
+
 </div>

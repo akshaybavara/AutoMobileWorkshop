@@ -1,0 +1,59 @@
+<div class="review-carousel-container" *ngIf="reviews && reviews.length > 0">
+
+  <!-- Desktop Left Arrow -->
+  <button
+    mat-icon-button
+    class="review-arrow review-arrow-left"
+    (click)="prevReview()"
+    [disabled]="currentIndex === 0">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <!-- Mobile Up Arrow -->
+  <button
+    mat-icon-button
+    class="review-arrow review-arrow-up"
+    (click)="prevReview()"
+    [disabled]="currentIndex === 0">
+    <mat-icon>expand_less</mat-icon>
+  </button>
+
+  <!-- Review Cards -->
+  <div class="review-list ">
+    <div class="review-card" *ngFor="let review of visibleReviews">
+      <div class="review-header">
+        <img
+          [src]="review.profile_photo_url || 'assets/images/user.png'"
+          alt="{{ review.author_name }}"
+          class="review-avatar"
+        />
+        <div>
+          <h4>{{ review.author_name }}</h4>
+          <div class="stars">
+            <mat-icon *ngFor="let s of getStars(review.rating)">star</mat-icon>
+          </div>
+        </div>
+      </div>
+      <p class="review-text">“{{ review.text }}”</p>
+      <span class="review-date">{{ review.relative_time_description }}</span>
+    </div>
+  </div>
+
+  <!-- Desktop Right Arrow -->
+  <button
+    mat-icon-button
+    class="review-arrow review-arrow-right"
+    (click)="nextReview()"
+    [disabled]="currentIndex + itemsPerPage >= reviews.length">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+
+  <!-- Mobile Down Arrow -->
+  <button
+    mat-icon-button
+    class="review-arrow review-arrow-down"
+    (click)="nextReview()"
+    [disabled]="currentIndex + itemsPerPage >= reviews.length">
+    <mat-icon>expand_more</mat-icon>
+  </button>
+</div>

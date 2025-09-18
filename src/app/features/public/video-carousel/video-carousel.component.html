@@ -1,0 +1,35 @@
+<div class="video-carousel-container" *ngIf="videos && videos.length > 0">
+
+  <!-- Left Arrow -->
+  <button
+    mat-icon-button
+    class="video-arrow video-arrow-left"
+    (click)="prevVideo()"
+    [disabled]="currentIndex === 0">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <!-- Video List -->
+  <div class="video-list">
+    <div
+      class="video-card"
+      *ngFor="let video of visibleVideos"
+    >
+      <iframe
+        [src]="getSafeUrl(video)"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Right Arrow -->
+  <button
+    mat-icon-button
+    class="video-arrow video-arrow-right"
+    (click)="nextVideo()"
+    [disabled]="currentIndex + itemsPerPage >= videos.length">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>
+

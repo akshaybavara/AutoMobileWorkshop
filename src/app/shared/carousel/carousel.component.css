@@ -1,0 +1,138 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.carousel-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  scrollbar-width: none;
+}
+
+.carousel-list::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-card {
+  flex: 0 0 auto;
+  width: 320px;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.service-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.review-card .review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.review-card .review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.review-card .stars mat-icon {
+  font-size: 18px;
+  color: #ff9800;
+}
+
+.review-card .review-text {
+  font-style: italic;
+  margin: 8px 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.dot {
+  width: 24px;
+  height: 6px;
+  background: #ddd;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #ccc;
+}
+
+.dot-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #ff9800;
+  width: 0%;
+}
+
+.dot-progress.animate {
+  animation: fill linear forwards;
+}
+
+.dot-progress.paused {
+  animation-play-state: paused;
+}
+
+@keyframes fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.video-card {
+  flex: 0 0 80%;
+  max-width: 400px;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 220px; /* adjust for mobile */
+  border-radius: 12px;
+}
+@media (min-width: 768px) {
+  .video-card iframe {
+    height: 300px;
+  }
+}

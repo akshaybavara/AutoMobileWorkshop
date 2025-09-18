@@ -1,0 +1,70 @@
+<div class="carousel-container" *ngIf="items && items.length > 0">
+  <!-- Left Arrow -->
+  <button mat-icon-button class="arrow arrow-left" (click)="scrollPrev()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <!-- Items -->
+  <div class="carousel-list scroll-snap" #carouselList>
+    <ng-container *ngFor="let item of items; let i = index">
+      <!-- Service Card -->
+      <div class="carousel-card service-card" *ngIf="type === 'service'">
+        <img [src]="item.image" alt="{{ item.title }}" />
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+
+      <!-- Review Card -->
+      <div class="carousel-card review-card" *ngIf="type === 'review'">
+        <div class="review-header">
+          <img [src]="item.profile_photo_url || 'assets/images/user.png'" class="review-avatar" />
+          <div>
+            <h4>{{ item.author_name }}</h4>
+            <div class="stars">
+              <mat-icon *ngFor="let s of [].constructor(item.rating)">star</mat-icon>
+            </div>
+          </div>
+        </div>
+        <p class="review-text">“{{ item.text }}”</p>
+        <span class="review-date">{{ item.relative_time_description }}</span>
+      </div>
+  <!-- Videos Card -->
+<ng-container *ngIf="type === 'video'">
+  <div class="video-card" *ngFor="let video of items">
+    <iframe
+      [src]="video.url"
+      frameborder="0"
+      allowfullscreen
+      playsinline
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      referrerpolicy="strict-origin-when-cross-origin"
+      loading="lazy">
+    </iframe>
+  </div>
+</ng-container>
+
+
+    </ng-container>
+  </div>
+
+  <!-- Right Arrow -->
+  <button mat-icon-button class="arrow arrow-right" (click)="scrollNext()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+
+  <!-- Dots -->
+  <div class="carousel-dots">
+    <div
+      class="dot"
+      *ngFor="let item of items; let i = index"
+      [class.active]="i === activeIndex"
+      (click)="goToSlide(i)"
+    >
+      <div
+        class="dot-progress"
+        [style.animation-duration.ms]="autoplayInterval"
+        [class.animate]="i === activeIndex"
+      ></div>
+    </div>
+  </div>
+</div>
